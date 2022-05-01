@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Display } from "./Display";
 import { Tecla } from "./Tecla";
 import { useState } from "react";
+import { BotaoIgual } from "./BotaoIgual";
 
 const StyleTeclas = styled.div`
   background-color: #2c47f2;
@@ -74,7 +75,8 @@ export const Calculator = () => {
       <Tecla tecla="0" aoClicar={() => printarDisplay("0")} />
       <Tecla tecla="." aoClicar={() => printarDisplay(".")} cor="#11807a" />
       <Tecla tecla="+" aoClicar={() => defineOperacao("+")} cor="#11807a" />
-      <Tecla tecla="=" aoClicar={() => resultadoFinal()} cor="#11807a" />
+      <Tecla tecla="C" aoClicar={() => setValor("")} cor="#11807a" />
+      <BotaoIgual tecla="=" aoClicar={() => resultadoFinal()} cor="#11807a" />
     </StyleTeclas>
   );
 };

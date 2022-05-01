@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-interface TeclaProps {
+interface TeclaProps2 {
   tecla: string;
   cor?: string;
   aoClicar: () => void;
@@ -9,8 +8,7 @@ interface TeclaProps {
 interface StyledProps {
   cor?: string;
 }
-
-const StyledTecla = styled.div`
+const StyleTeclaIgual = styled.div`
   background-color: ${(props: StyledProps) => props.cor};
   text-align: center;
   padding: 10px;
@@ -21,16 +19,18 @@ const StyledTecla = styled.div`
   border-radius: 0px 20px 0px 20px;
   box-shadow: 18px 16px 15px -10px black;
   transition: 0.2s;
+  display: grid;
+  grid-column: span 4;
 
   &:active {
     transform: scale(0.5);
   }
 `;
 
-export const Tecla = (props: TeclaProps) => {
+export const BotaoIgual = (props: TeclaProps2) => {
   return (
-    <StyledTecla cor={props.cor || "#1e96eb"} onClick={props.aoClicar}>
+    <StyleTeclaIgual cor={props.cor || "#1e96eb"} onClick={props.aoClicar}>
       {props.tecla}
-    </StyledTecla>
+    </StyleTeclaIgual>
   );
 };

@@ -25,7 +25,6 @@ function App() {
       <Titulo titulo="A Calculadora da Sol"></Titulo>
       <br />
       <br />
-      <br />
       <Calculator />
     </StyleBody>
   );
