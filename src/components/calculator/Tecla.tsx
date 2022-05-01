@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 interface TeclaProps {
-  tecla?: string;
+  tecla: string;
+  cor?: string;
+  aoClicar: () => void;
+}
+interface StyledProps {
   cor?: string;
 }
 
 const StyledTecla = styled.div`
-  background-color: ${(props: TeclaProps) => props.cor};
+  background-color: ${(props: StyledProps) => props.cor};
   text-align: center;
   width: fit-content;
   padding: 10px;
@@ -20,5 +24,9 @@ const StyledTecla = styled.div`
 `;
 
 export const Tecla = (props: TeclaProps) => {
-  return <StyledTecla cor={props.cor || "#1e96eb"}>{props.tecla}</StyledTecla>;
+  return (
+    <StyledTecla cor={props.cor || "#1e96eb"} onClick={props.aoClicar}>
+      {props.tecla}
+    </StyledTecla>
+  );
 };

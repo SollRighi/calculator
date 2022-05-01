@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface textoDisplay {
+  texto: string;
+}
+
 const StyleDisplay = styled.div`
   grid-column: span 4;
   text-align: right;
@@ -8,8 +12,9 @@ const StyleDisplay = styled.div`
   font-size: 40px;
   margin-bottom: 20px;
   border-radius: 10px;
+  min-height: 53px;
 `;
 
-export const Display = () => {
-  return <StyleDisplay>oi</StyleDisplay>;
+export const Display = (props: textoDisplay) => {
+  return <StyleDisplay> {props.texto} </StyleDisplay>;
 };
